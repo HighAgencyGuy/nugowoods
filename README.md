@@ -1,73 +1,122 @@
-# Welcome to your Lovable project
+# BeePee Furniture Works
 
-## Project info
+A premium furniture e-commerce website for BeePee Furniture Works, handcrafted furniture in Abuja, Nigeria.
 
-**URL**: https://lovable.dev/projects/11755db7-5fce-4fe5-82e4-33db6c1ac9c4
+## Features
 
-## How can I edit this code?
+- **Modern Design System**: Rich color palette with Honey Gold accents, semantic design tokens, and consistent theming
+- **GSAP Animations**: Smooth scroll-triggered animations and parallax effects
+- **Responsive Layout**: Mobile-first design that scales beautifully across all devices
+- **Product Showroom**: Browse furniture collections with advanced filtering
+- **Custom Project Intake**: Multi-step form with WhatsApp integration for custom orders
+- **Portfolio Showcase**: Case studies of completed projects
+- **SEO Optimized**: Proper meta tags, semantic HTML, and accessibility features
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Framework**: React 18 + TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: shadcn/ui
+- **Animations**: GSAP with ScrollTrigger
+- **Smooth Scroll**: Lenis
+- **Routing**: React Router v6
+- **Forms**: React Hook Form + Zod validation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/11755db7-5fce-4fe5-82e4-33db6c1ac9c4) and start prompting.
+## Environment Variables
 
-Changes made via Lovable will be committed automatically to this repo.
+Create a `.env` file with:
 
-**Use your preferred IDE**
+```env
+# WhatsApp Integration
+VITE_WHATSAPP_NUMBER=2348000000000
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# Site Configuration
+VITE_SITE_NAME="BeePee Furniture Works"
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Getting Started
 
-Follow these steps:
+1. Install dependencies:
+```bash
+npm install
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+2. Start development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+3. Build for production:
+```bash
+npm run build
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Pages
 
-**Use GitHub Codespaces**
+- **Home** (`/`) - Hero section, featured collections, testimonials
+- **Showroom** (`/showroom`) - Product catalog with filters
+- **Custom Projects** (`/custom`) - Request quote form with WhatsApp integration
+- **Portfolio** (`/portfolio`) - Showcase of completed projects
+- **Process** (`/process`) - How custom furniture is made
+- **About** (`/about`) - Company mission, values, and team
+- **Contact** (`/contact`) - Contact form and business information
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Design System
 
-## What technologies are used for this project?
+The design system uses HSL color tokens defined in `src/index.css`:
 
-This project is built with:
+- **Primary**: Honey Gold `#D6A72E` - Accent color for CTAs and highlights
+- **Secondary**: Warm Oak `#C28D62` - Supporting color for surfaces
+- **Background**: Deep Charcoal `#121212` - Main background
+- **Foreground**: Off-White `#F7F5F2` - Primary text color
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Custom utilities available:
+- `.text-gradient-gold` - Gold gradient text
+- `.hover-lift` - Lift on hover animation
+- `.glow-gold` - Gold glow shadow effect
 
-## How can I deploy this project?
+## Key Features
 
-Simply open [Lovable](https://lovable.dev/projects/11755db7-5fce-4fe5-82e4-33db6c1ac9c4) and click on Share -> Publish.
+### WhatsApp Integration
+All contact forms and custom project requests integrate with WhatsApp for seamless customer communication.
 
-## Can I connect a custom domain to my Lovable project?
+### GSAP Animations
+Smooth animations throughout the site:
+- Hero parallax effects
+- Scroll-triggered card animations
+- Staggered element reveals
+- Interactive hover states
 
-Yes, you can!
+### Responsive Design
+Mobile-first approach with breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is optimized for deployment on Vercel or Netlify.
+
+### Vercel
+```bash
+npm run build
+vercel --prod
+```
+
+### Netlify
+```bash
+npm run build
+# Deploy the `dist` folder
+```
+
+## Performance
+
+- Lazy-loaded images
+- Code splitting by route
+- Optimized GSAP animations
+- Minimal bundle size with tree-shaking
+
+## License
+
+© 2025 BeePee Furniture Works. All rights reserved.
