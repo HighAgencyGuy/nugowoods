@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import heroSofa from "@/assets/hero-sofa.jpg";
 import heroDining from "@/assets/hero-dining.jpg";
@@ -7,6 +10,9 @@ import processCrafting from "@/assets/process-crafting.jpg";
 import tvConsole from "@/assets/products/tv-console.jpg";
 import bedFrame from "@/assets/products/bed-frame.jpg";
 import officeDesk from "@/assets/products/office-desk.jpg";
+import bookshelf from "@/assets/products/bookshelf.jpg";
+import armchair from "@/assets/products/armchair.jpg";
+import outdoorSet from "@/assets/products/outdoor-set.jpg";
 
 const projects = [
   {
@@ -63,9 +69,86 @@ const projects = [
     image: processCrafting,
     tags: ["Craftsmanship", "Process"],
   },
+  {
+    title: "Jabi Lake Mall Corporate Office",
+    location: "Jabi, Abuja",
+    category: "Commercial",
+    description:
+      "Complete office suite with executive desks, ergonomic seating, and custom storage. Modern design with efficient space utilization for growing business.",
+    image: officeDesk,
+    tags: ["Office", "Modern", "Commercial"],
+  },
+  {
+    title: "Katampe Extension Library",
+    location: "Katampe, Abuja",
+    category: "Residential",
+    description:
+      "Floor-to-ceiling bookshelves with integrated ladder system. Custom dimensions to maximize vertical space while maintaining aesthetic appeal.",
+    image: bookshelf,
+    tags: ["Storage", "Custom", "Oak"],
+  },
+  {
+    title: "Lugbe Reading Corner",
+    location: "Lugbe, Abuja",
+    category: "Residential",
+    description:
+      "Comfortable reading armchair with custom upholstery and matching ottoman. Perfect blend of ergonomics and style for intimate spaces.",
+    image: armchair,
+    tags: ["Living Room", "Upholstery", "Comfort"],
+  },
+  {
+    title: "Kubwa Outdoor Lounge",
+    location: "Kubwa, Abuja",
+    category: "Residential",
+    description:
+      "Weather-resistant outdoor furniture set with teak construction. Designed to withstand Abuja's climate while maintaining luxury aesthetics.",
+    image: outdoorSet,
+    tags: ["Outdoor", "Teak", "Weather-resistant"],
+  },
+  {
+    title: "Durumi Boutique Hotel",
+    location: "Durumi, Abuja",
+    category: "Commercial",
+    description:
+      "10-room hotel fit-out including beds, nightstands, and seating. Consistent quality across all pieces with on-time delivery for grand opening.",
+    image: bedFrame,
+    tags: ["Hospitality", "Commercial", "Bulk Order"],
+  },
+  {
+    title: "Life Camp Family Dining",
+    location: "Life Camp, Abuja",
+    category: "Residential",
+    description:
+      "Extendable 6-8 seater dining table with matching chairs. Perfect for family gatherings with elegant mahogany finish.",
+    image: heroDining,
+    tags: ["Dining", "Mahogany", "Extendable"],
+  },
 ];
 
 export default function Portfolio() {
+  const [currentPage, setCurrentPage] = useState(0);
+  const projectsPerPage = 6;
+  const totalPages = Math.ceil(projects.length / projectsPerPage);
+
+  const currentProjects = projects.slice(
+    currentPage * projectsPerPage,
+    (currentPage + 1) * projectsPerPage
+  );
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages - 1) {
+      setCurrentPage((prev) => prev + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage((prev) => prev - 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
@@ -86,7 +169,7 @@ export default function Portfolio() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {projects.map((project, idx) => (
+            {currentProjects.map((project, idx) => (
               <Card
                 key={idx}
                 className="group overflow-hidden hover-lift bg-card/50 border-border"
@@ -118,6 +201,33 @@ export default function Portfolio() {
               </Card>
             ))}
           </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-4 mt-12">
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={handlePrevPage}
+                disabled={currentPage === 0}
+              >
+                <ChevronLeft className="mr-2 h-5 w-5" />
+                Previous
+              </Button>
+              <div className="text-sm text-muted-foreground">
+                Page {currentPage + 1} of {totalPages}
+              </div>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages - 1}
+              >
+                Next
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
