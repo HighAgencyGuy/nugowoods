@@ -131,7 +131,7 @@ export default function Home() {
           background: `linear-gradient(135deg, hsl(0, 0%, 7%) 0%, hsl(0, 0%, 12%) 100%)`,
         }}
       >
-        <div className="absolute inset-0 opacity-50">
+        <div className="absolute inset-0 opacity-30">
           <img
             src={heroSofa}
             alt="Premium furniture"

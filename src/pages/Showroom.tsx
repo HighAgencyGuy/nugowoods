@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Filter, Search, ShoppingCart } from "lucide-react";
-import ProductDetailDialog from "@/components/ProductDetailDialog";
+import { Filter, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -82,8 +81,6 @@ export default function Showroom() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedWood, setSelectedWood] = useState("all");
-  const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
-  const [dialogOpen, setDialogOpen] = useState(false);
 
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.name
@@ -202,14 +199,8 @@ export default function Showroom() {
               </CardContent>
 
               <CardFooter className="pt-0">
-                <Button 
-                  className="w-full" 
-                  onClick={() => {
-                    setSelectedProduct(product);
-                    setDialogOpen(true);
-                  }}
-                >
-                  View Details
+                <Button className="w-full" asChild>
+                  <Link to={`/product/${product.id}`}>View Details</Link>
                 </Button>
               </CardFooter>
             </Card>
@@ -223,12 +214,6 @@ export default function Showroom() {
             </p>
           </div>
         )}
-
-        <ProductDetailDialog
-          product={selectedProduct}
-          open={dialogOpen}
-          onOpenChange={setDialogOpen}
-        />
       </div>
     </div>
   );

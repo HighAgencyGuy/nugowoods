@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { Upload, ArrowRight, X } from "lucide-react";
+import { useState } from "react";
+import { Upload, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,8 +15,6 @@ import { useToast } from "@/hooks/use-toast";
 
 export default function CustomProjects() {
   const { toast } = useToast();
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -72,22 +70,6 @@ export default function CustomProjects() {
       ...prev,
       [e.target.name]: e.target.value,
     }));
-  };
-
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files;
-    if (files) {
-      const newFiles = Array.from(files);
-      setUploadedFiles((prev) => [...prev, ...newFiles]);
-      toast({
-        title: "Files uploaded",
-        description: `${newFiles.length} file(s) added successfully.`,
-      });
-    }
-  };
-
-  const removeFile = (index: number) => {
-    setUploadedFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
   const steps = [
@@ -310,53 +292,11 @@ export default function CustomProjects() {
                     />
                   </div>
 
-                  <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Upload Photos or Sketches
-                    </label>
-                    <div 
-                      className="border-2 border-dashed border-border rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors"
-                      onClick={() => fileInputRef.current?.click()}
-                    >
-                      <Upload className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
-                      <p className="text-sm text-muted-foreground mb-2">
-                        Click to upload photos or sketches
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        PNG, JPG, PDF up to 10MB each
-                      </p>
-                      <input
-                        ref={fileInputRef}
-                        type="file"
-                        multiple
-                        accept="image/*,.pdf"
-                        onChange={handleFileUpload}
-                        className="hidden"
-                      />
-                    </div>
-                    {uploadedFiles.length > 0 && (
-                      <div className="mt-4 space-y-2">
-                        {uploadedFiles.map((file, index) => (
-                          <div
-                            key={index}
-                            className="flex items-center justify-between p-3 bg-card/50 rounded-lg border border-border"
-                          >
-                            <span className="text-sm truncate flex-1">
-                              {file.name}
-                            </span>
-                            <Button
-                              type="button"
-                              variant="ghost"
-                              size="icon"
-                              onClick={() => removeFile(index)}
-                              className="h-8 w-8 flex-shrink-0"
-                            >
-                              <X className="h-4 w-4" />
-                            </Button>
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                  <div className="border-2 border-dashed border-border rounded-lg p-8 text-center">
+                    <Upload className="h-8 w-8 text-muted-foreground mx-auto mb-2" />
+                    <p className="text-sm text-muted-foreground mb-2">
+                      Have photos or sketches? Share them via WhatsApp after submitting
+                    </p>
                   </div>
 
                   <Button type="submit" size="lg" className="w-full">

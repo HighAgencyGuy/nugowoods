@@ -4,7 +4,6 @@ import { Menu, X, Phone, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
-import { useCartStore } from "@/store/cartStore";
 import logo from "@/assets/logo.png";
 
 const navItems = [
@@ -21,7 +20,6 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
-  const getTotalItems = useCartStore((state) => state.getTotalItems);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,15 +73,11 @@ export function Navbar() {
 
             {/* Desktop Actions */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Button variant="ghost" size="icon" className="relative" asChild>
-                <Link to="/cart">
-                  <ShoppingCart className="h-5 w-5" />
-                  {getTotalItems() > 0 && (
-                    <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs">
-                      {getTotalItems()}
-                    </Badge>
-                  )}
-                </Link>
+              <Button variant="ghost" size="icon" className="relative">
+                <ShoppingCart className="h-5 w-5" />
+                <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs">
+                  0
+                </Badge>
               </Button>
               <Button variant="default" size="sm" asChild>
                 <a
@@ -120,13 +114,6 @@ export function Navbar() {
                       {item.name}
                     </Link>
                   ))}
-                  <Link
-                    to="/cart"
-                    onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium transition-colors text-foreground hover:text-primary"
-                  >
-                    Cart {getTotalItems() > 0 && `(${getTotalItems()})`}
-                  </Link>
                   <div className="pt-4 border-t border-border">
                     <Button variant="default" className="w-full" asChild>
                       <a
