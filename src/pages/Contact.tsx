@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import heroContact from "@/assets/hero-contact.jpg";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
@@ -19,7 +20,7 @@ export default function Contact() {
     e.preventDefault();
 
     // WhatsApp message
-    const whatsappNumber = "2348000000000";
+    const whatsappNumber = "2348144041524";
     const message = encodeURIComponent(
       `Hi! I'm ${formData.name}.\n\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage: ${formData.message}`
     );
@@ -43,16 +44,28 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen py-12">
-      <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Have questions? Ready to start your custom project? We're here to help.
-          </p>
+    <div className="min-h-screen">
+      {/* Hero */}
+      <section className="relative h-[400px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src={heroContact}
+            alt="Contact Us"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
         </div>
+        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center">
+          <div className="text-center max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Get in Touch</h1>
+            <p className="text-xl text-muted-foreground">
+              Have questions? Ready to start your custom project? We're here to help.
+            </p>
+          </div>
+        </div>
+      </section>
 
+      <div className="container mx-auto px-4 py-12">
         <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <Card className="bg-card/50 border-border">
@@ -133,7 +146,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Our Location</h3>
                     <p className="text-muted-foreground">
-                      Abuja, Nigeria
+                      Shop A1, Kugbo Furniture Market, Abuja, FCT
                       <br />
                       Visit our showroom by appointment
                     </p>
@@ -149,7 +162,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Phone & WhatsApp</h3>
                     <p className="text-muted-foreground">
-                      +234 80 0000 0000
+                      +234 814 404 1524
                       <br />
                       Available Mon–Sat, 9AM–6PM
                     </p>
@@ -165,7 +178,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Email</h3>
                     <p className="text-muted-foreground">
-                      info@beepeefurniture.com
+                      info@nugowoods.com
                       <br />
                       We typically respond within 24 hours
                     </p>

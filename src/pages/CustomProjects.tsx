@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import heroCustom from "@/assets/hero-custom.jpg";
 
 export default function CustomProjects() {
   const { toast } = useToast();
@@ -32,7 +33,7 @@ export default function CustomProjects() {
     e.preventDefault();
 
     // Create WhatsApp message
-    const whatsappNumber = "2348000000000";
+    const whatsappNumber = "2348144041524";
     const message = encodeURIComponent(
       `🛋️ CUSTOM PROJECT REQUEST\n\n` +
         `Name: ${formData.name}\n` +
@@ -121,9 +122,12 @@ export default function CustomProjects() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
-        <div className="relative z-10 container mx-auto px-4">
+      <section className="relative h-[400px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroCustom} alt="Custom Projects" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+        </div>
+        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Custom Projects</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">

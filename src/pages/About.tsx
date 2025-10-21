@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import heroAbout from "@/assets/hero-about.jpg";
 import processCrafting from "@/assets/process-crafting.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -36,7 +37,7 @@ export default function About() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">About BeePee</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">About Nugowoods</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               We build furniture that feels like home—beautiful, functional, and made to last.
               Since our founding in Abuja, we've been dedicated to crafting pieces that transform
@@ -53,7 +54,7 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                At BeePee Furniture Works, we believe that every home deserves furniture that's
+                At Nugowoods, we believe that every home deserves furniture that's
                 both beautiful and built to last. Our mission is to combine traditional
                 craftsmanship with contemporary design, creating pieces that enhance Nigerian
                 homes for generations.
@@ -158,7 +159,7 @@ export default function About() {
                 careful planning and repurposing of offcuts.
               </p>
               <p>
-                When you choose BeePee, you're choosing furniture that's kind to both your home
+                When you choose Nugowoods, you're choosing furniture that's kind to both your home
                 and the environment.
               </p>
             </div>

@@ -2,9 +2,9 @@ import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function WhatsAppButton() {
-  const whatsappNumber = "2348000000000";
+  const whatsappNumber = "2348144041524";
   const message = encodeURIComponent(
-    "Hi BeePee Furniture Works! I'm interested in learning more about your furniture."
+    "Hi Nugowoods! I'm interested in learning more about your furniture."
   );
 
   return (

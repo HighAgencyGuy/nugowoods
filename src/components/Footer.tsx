@@ -13,7 +13,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={logo} alt="BeePee Furniture Works" className="h-12 w-auto" />
+            <img src={logo} alt="Nugowoods" className="h-12 w-auto" />
             <p className="text-sm text-muted-foreground">
               Crafted comfort. Designed for life.
             </p>
@@ -63,15 +63,15 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">Abuja, Nigeria</span>
+                <span className="text-muted-foreground">Shop A1, Kugbo Furniture Market, Abuja, FCT</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">+234 80 0000 0000</span>
+                <span className="text-muted-foreground">+234 814 404 1524</span>
               </li>
               <li className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">info@beepeefurniture.com</span>
+                <span className="text-muted-foreground">info@nugowoods.com</span>
               </li>
             </ul>
             <p className="text-sm text-muted-foreground mt-4">
@@ -99,7 +99,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} BeePee Furniture Works. All rights reserved.
+            © {currentYear} Nugowoods. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
             <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">

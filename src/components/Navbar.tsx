@@ -31,16 +31,16 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const whatsappNumber = "2348000000000";
+  const whatsappNumber = "2348144041524";
   const whatsappMessage = encodeURIComponent(
-    `Hi BeePee Furniture Works! I'm browsing your website and would like to learn more.`
+    `Hi Nugowoods! I'm browsing your website and would like to learn more.`
   );
 
   return (
     <>
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground py-2 px-4 text-sm text-center">
-        <p>Showroom in Abuja • Made-to-order & in-stock • Call/WhatsApp: +234 80 0000 0000</p>
+        <p>Shop A1, Kugbo Furniture Market, Abuja • Made-to-order & in-stock • Call/WhatsApp: +234 814 404 1524</p>
       </div>
 
       {/* Main Navbar */}
@@ -53,7 +53,7 @@ export function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <img src={logo} alt="BeePee Furniture Works" className="h-10 w-auto" />
+              <img src={logo} alt="Nugowoods" className="h-10 w-auto" />
             </Link>
 
             {/* Desktop Navigation */}
