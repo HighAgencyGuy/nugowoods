@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import heroAbout from "@/assets/hero-about.jpg";
-import processCrafting from "@/assets/wworker.jpg";
+import processCrafting from "@/assets/worker.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -64,8 +64,7 @@ export default function About() {
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Every piece we create is a testament to our commitment to quality, attention to
-                detail, and respect for the materials we work with. We source premium hardwoods
-                and use time-tested joinery techniques to ensure your furniture becomes a lasting
+                detail, and respect for the materials we work with. We use time-tested joinery techniques to ensure your furniture becomes a lasting
                 part of your story.
               </p>
             </div>
@@ -73,7 +72,7 @@ export default function About() {
               <img
                 src={processCrafting}
                 alt="Craftsmanship"
-                className="w-full h-auto"
+                className="w-full h-auto scale-75 border-2 border-primary rounded-2xl"
               />
             </div>
           </div>
