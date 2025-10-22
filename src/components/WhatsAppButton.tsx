@@ -12,12 +12,13 @@ export function WhatsAppButton() {
       href={`https://wa.me/${whatsappNumber}?text=${message}`}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 group"
+      className="fixed bottom-6 right-6 z-[9999] group pointer-events-auto"
       aria-label="Chat on WhatsApp"
     >
       <Button
         size="lg"
-        className="h-14 w-14 rounded-full shadow-2xl bg-[#25D366] hover:bg-[#20BA5A] text-white glow-gold group-hover:scale-110 transition-transform duration-300"
+        className="h-14 w-14 rounded-full shadow-2xl bg-[#25D366] hover:bg-[#20BA5A] text-white group-hover:scale-110 transition-transform duration-300"
+        style={{ boxShadow: "0 0 40px rgba(37, 211, 102, 0.4)" }}
       >
         <MessageCircle className="h-7 w-7" />
       </Button>

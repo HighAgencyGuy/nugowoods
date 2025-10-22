@@ -145,7 +145,7 @@ export default function Home() {
             Handcrafted in Abuja
           </Badge>
           <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-            BeePee Furniture Works
+            Nugowoods
           </h1>
           <p className="hero-subtitle text-xl md:text-3xl text-muted-foreground mb-12 max-w-2xl mx-auto">
             Crafted comfort. Designed for life.
