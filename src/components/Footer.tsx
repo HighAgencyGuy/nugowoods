@@ -13,8 +13,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="h-18 w-18 rounded-full bg-white flex items-center justify-center p-1.5 inline-flex">
-              <img src={logo} alt="Nugowoods" className="h-15 w-15 object-contain" />
+            <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center p-2 inline-flex">
+              <img src={logo} alt="Nugowoods" className="h-full w-full object-contain" />
             </div>
             <p className="text-sm text-muted-foreground">
               Crafted comfort. Designed for life.
