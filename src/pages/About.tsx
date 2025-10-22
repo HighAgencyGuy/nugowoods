@@ -64,7 +64,7 @@ export default function About() {
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Every piece we create is a testament to our commitment to quality, attention to
-                detail, and respect for the materials we work with. We use time-tested joinery techniques to ensure your furniture becomes a lasting
+                detail, and respect for the materials we work with. We use time-tested joinery techniques carried out by experienced craftspeople to ensure your furniture becomes a lasting
                 part of your story.
               </p>
             </div>
