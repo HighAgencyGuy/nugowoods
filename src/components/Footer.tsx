@@ -13,7 +13,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="space-y-4">
-            <img src={logo} alt="Nugowoods" className="h-12 w-auto" />
+            <div className="h-36 w-36 rounded-full bg-white flex items-center justify-center p-3 inline-flex">
+              <img src={logo} alt="Nugowoods" className="h-30 w-30 object-contain" />
+            </div>
             <p className="text-sm text-muted-foreground">
               Crafted comfort. Designed for life.
             </p>

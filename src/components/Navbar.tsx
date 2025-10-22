@@ -53,7 +53,9 @@ export function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
-              <img src={logo} alt="Nugowoods" className="h-10 w-auto" />
+              <div className="h-30 w-30 rounded-full bg-white flex items-center justify-center p-2">
+                <img src={logo} alt="Nugowoods" className="h-26 w-26 object-contain" />
+              </div>
             </Link>
 
             {/* Desktop Navigation */}
