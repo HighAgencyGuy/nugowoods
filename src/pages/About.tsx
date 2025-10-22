@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import heroAbout from "@/assets/hero-about.jpg";
-import processCrafting from "@/assets/process-crafting.jpg";
+import processCrafting from "@/assets/wworker.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
