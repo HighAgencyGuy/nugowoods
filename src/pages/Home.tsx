@@ -17,11 +17,11 @@ import outdoorSet from "@/assets/products/outdoor-set.jpg";
 gsap.registerPlugin(ScrollTrigger);
 
 const collections = [
-  { name: "Living Room", image: heroSofa, path: "/showroom?category=living" },
-  { name: "Dining", image: heroDining, path: "/showroom?category=dining" },
-  { name: "Bedroom", image: bedFrame, path: "/showroom?category=bedroom" },
-  { name: "Office", image: officeDesk, path: "/showroom?category=office" },
-  { name: "Outdoor", image: outdoorSet, path: "/showroom?category=outdoor" },
+  { name: "Woodwork", image: heroSofa, path: "/showroom?category=woodwork" },
+  { name: "Metalwork", image: heroDining, path: "/showroom?category=metalwork" },
+  { name: "Hybrid Works", image: bedFrame, path: "/showroom?category=hybrid" },
+  { name: "Interior Design", image: officeDesk, path: "/showroom?category=interior" },
+  { name: "Custom Projects", image: outdoorSet, path: "/showroom?category=custom" },
 ];
 
 const testimonials = [
@@ -145,10 +145,10 @@ export default function Home() {
             Handcrafted in Abuja
           </Badge>
           <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-            Nugowoods
+            MienWorks
           </h1>
           <p className="hero-subtitle text-xl md:text-3xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Crafted comfort. Designed for life.
+            Master Craftsmen in Wood, Metal & Interior Design
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="hero-cta text-lg px-8" asChild>

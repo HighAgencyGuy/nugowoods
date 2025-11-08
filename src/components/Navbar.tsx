@@ -33,7 +33,7 @@ export function Navbar() {
 
   const whatsappNumber = "2348144041524";
   const whatsappMessage = encodeURIComponent(
-    `Hi Nugowoods! I'm browsing your website and would like to learn more.`
+    `Hi MienWorks! I'm browsing your website and would like to learn more.`
   );
 
   return (
@@ -54,7 +54,7 @@ export function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
               <div className="h-16 w-16 rounded-full bg-white flex items-center justify-center p-1.5">
-                <img src={logo} alt="Nugowoods" className="h-full w-full object-contain" />
+                <img src={logo} alt="MienWorks" className="h-full w-full object-contain" />
               </div>
             </Link>
 

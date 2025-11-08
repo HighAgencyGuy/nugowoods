@@ -14,10 +14,10 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <div className="h-20 w-20 rounded-full bg-white flex items-center justify-center p-2 inline-flex">
-              <img src={logo} alt="Nugowoods" className="h-full w-full object-contain" />
+              <img src={logo} alt="MienWorks" className="h-full w-full object-contain" />
             </div>
             <p className="text-sm text-muted-foreground">
-              Crafted comfort. Designed for life.
+              Master Craftsmen in Wood, Metal & Interior Design
             </p>
             <div className="flex space-x-3">
               <Button variant="ghost" size="icon" className="h-9 w-9">
@@ -73,7 +73,7 @@ export function Footer() {
               </li>
               <li className="flex items-start space-x-2">
                 <Mail className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-muted-foreground">info@nugowoods.com</span>
+                <span className="text-muted-foreground">info@mienworks.com</span>
               </li>
             </ul>
             <p className="text-sm text-muted-foreground mt-4">
@@ -101,7 +101,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Nugowoods. All rights reserved.
+            © {currentYear} MienWorks. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
             <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors">

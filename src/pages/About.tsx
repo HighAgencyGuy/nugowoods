@@ -40,11 +40,9 @@ export default function About() {
         </div>
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">About Nugowoods</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">About MienWorks</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              We build furniture that feels like home—beautiful, functional, and made to last.
-              Since our founding in Abuja, we've been dedicated to crafting pieces that transform
-              spaces and stand the test of time.
+              Master craftsmen specializing in woodwork, metalwork, and interior design. We create stunning hybrid pieces combining wood and metal, bringing your vision to life with exceptional craftsmanship. Based in Abuja, we transform spaces with quality that lasts.
             </p>
           </div>
         </div>
@@ -57,15 +55,10 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                At Nugowoods, we believe that every home deserves furniture that's
-                both beautiful and built to last. Our mission is to combine traditional
-                craftsmanship with contemporary design, creating pieces that enhance Nigerian
-                homes for generations.
+                At MienWorks, we blend the warmth of wood with the strength of metal to create extraordinary pieces. Our mission is to deliver exceptional woodwork, metalwork, and interior design solutions that transform spaces. We specialize in custom hybrid works that showcase the beauty of both materials.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Every piece we create is a testament to our commitment to quality, attention to
-                detail, and respect for the materials we work with. We use time-tested joinery techniques carried out by experienced craftspeople to ensure your furniture becomes a lasting
-                part of your story.
+                From elegant wooden furniture to industrial metal fixtures, and stunning wood-metal combinations, every project reflects our dedication to craftsmanship, innovation, and timeless design. We also offer complete interior decorating services to bring your vision to life.
               </p>
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
@@ -161,7 +154,7 @@ export default function About() {
                 careful planning and repurposing of offcuts.
               </p>
               <p>
-                When you choose Nugowoods, you're choosing furniture that's kind to both your home
+                When you choose MienWorks, you're choosing craftsmanship that's kind to both your space
                 and the environment.
               </p>
             </div>
