@@ -1,30 +1,147 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+
+import heroSofa from "@/assets/hero-sofa.jpg";
+import heroDining from "@/assets/hero-dining.jpg";
+import processCrafting from "@/assets/process-crafting.jpg";
+import tvConsole from "@/assets/products/tv-console.jpg";
+import bedFrame from "@/assets/products/bed-frame.jpg";
+import officeDesk from "@/assets/products/office-desk.jpg";
+import bookshelf from "@/assets/products/bookshelf.jpg";
+import armchair from "@/assets/products/armchair.jpg";
+import outdoorSet from "@/assets/products/outdoor-set.jpg";
 import heroPortfolio from "@/assets/hero-portfolio.jpg";
+
+const projects = [
+  {
+    id: "1",
+    title: "Wuse II Penthouse Fit-Out",
+    location: "Wuse II, Abuja",
+    category: "Residential",
+    description:
+      "Complete living and dining room transformation with custom modular sofa, entertainment console, and 8-seater dining table in warm oak. Modern Nigerian luxury aesthetic.",
+    image: heroSofa,
+    tags: ["Living Room", "Dining", "Oak"],
+  },
+  {
+    id: "2",
+    title: "Maitama Boardroom",
+    location: "Maitama, Abuja",
+    category: "Commercial",
+    description:
+      "Executive 12-seater conference table in mahogany with integrated cable management and matching credenza. Professional finish that reflects corporate excellence.",
+    image: heroDining,
+    tags: ["Office", "Mahogany", "Commercial"],
+  },
+  {
+    id: "3",
+    title: "Gwarinpa Family Home",
+    location: "Gwarinpa, Abuja",
+    category: "Residential",
+    description:
+      "TV console with custom storage solutions and bedroom wardrobes. Space-efficient design maximizing storage while maintaining clean lines.",
+    image: tvConsole,
+    tags: ["Storage", "Living Room", "Bedroom"],
+  },
+  {
+    id: "4",
+    title: "Asokoro Master Suite",
+    location: "Asokoro, Abuja",
+    category: "Residential",
+    description:
+      "Luxury king bed frame with upholstered headboard, matching nightstands, and dresser. Rich mahogany with premium linen upholstery.",
+    image: bedFrame,
+    tags: ["Bedroom", "Mahogany", "Luxury"],
+  },
+  {
+    id: "5",
+    title: "Garki Legal Chambers",
+    location: "Garki, Abuja",
+    category: "Commercial",
+    description:
+      "Complete office fit-out including executive desks, bookshelves, and client seating. Professional teak finish with brass accents.",
+    image: officeDesk,
+    tags: ["Office", "Teak", "Commercial"],
+  },
+  {
+    id: "6",
+    title: "Workshop Excellence",
+    location: "Sancraft Workshop",
+    category: "Process",
+    description:
+      "Behind the scenes: our craftspeople at work creating precision joinery and hand-finished surfaces that define quality.",
+    image: processCrafting,
+    tags: ["Craftsmanship", "Process"],
+  },
+  {
+    id: "7",
+    title: "Jabi Lake Mall Corporate Office",
+    location: "Jabi, Abuja",
+    category: "Commercial",
+    description:
+      "Complete office suite with executive desks, ergonomic seating, and custom storage. Modern design with efficient space utilization for growing business.",
+    image: officeDesk,
+    tags: ["Office", "Modern", "Commercial"],
+  },
+  {
+    id: "8",
+    title: "Katampe Extension Library",
+    location: "Katampe, Abuja",
+    category: "Residential",
+    description:
+      "Floor-to-ceiling bookshelves with integrated ladder system. Custom dimensions to maximize vertical space while maintaining aesthetic appeal.",
+    image: bookshelf,
+    tags: ["Storage", "Custom", "Oak"],
+  },
+  {
+    id: "9",
+    title: "Lugbe Reading Corner",
+    location: "Lugbe, Abuja",
+    category: "Residential",
+    description:
+      "Comfortable reading armchair with custom upholstery and matching ottoman. Perfect blend of ergonomics and style for intimate spaces.",
+    image: armchair,
+    tags: ["Living Room", "Upholstery", "Comfort"],
+  },
+  {
+    id: "10",
+    title: "Kubwa Outdoor Lounge",
+    location: "Kubwa, Abuja",
+    category: "Residential",
+    description:
+      "Weather-resistant outdoor furniture set with teak construction. Designed to withstand Abuja's climate while maintaining luxury aesthetics.",
+    image: outdoorSet,
+    tags: ["Outdoor", "Teak", "Weather-resistant"],
+  },
+  {
+    id: "11",
+    title: "Durumi Boutique Hotel",
+    location: "Durumi, Abuja",
+    category: "Commercial",
+    description:
+      "10-room hotel fit-out including beds, nightstands, and seating. Consistent quality across all pieces with on-time delivery for grand opening.",
+    image: bedFrame,
+    tags: ["Hospitality", "Commercial", "Bulk Order"],
+  },
+  {
+    id: "12",
+    title: "Life Camp Family Dining",
+    location: "Life Camp, Abuja",
+    category: "Residential",
+    description:
+      "Extendable 6-8 seater dining table with matching chairs. Perfect for family gatherings with elegant mahogany finish.",
+    image: heroDining,
+    tags: ["Dining", "Mahogany", "Extendable"],
+  },
+];
 
 export default function Portfolio() {
   const [currentPage, setCurrentPage] = useState(0);
   const projectsPerPage = 6;
-
-  const { data: projects = [], isLoading } = useQuery({
-    queryKey: ["portfolio"],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from("portfolio")
-        .select("*")
-        .eq("is_active", true)
-        .order("display_order", { ascending: true });
-      
-      if (error) throw error;
-      return data;
-    },
-  });
 
   const totalPages = Math.ceil(projects.length / projectsPerPage);
 
@@ -69,81 +186,66 @@ export default function Portfolio() {
       {/* Projects Grid */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          {isLoading ? (
-            <div className="text-center text-muted-foreground">Loading portfolio...</div>
-          ) : projects.length === 0 ? (
-            <div className="text-center text-muted-foreground">
-              <p className="text-lg">No portfolio projects yet.</p>
-              <p className="text-sm mt-2">Check back soon for our latest work!</p>
-            </div>
-          ) : (
-            <>
-              <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                {currentProjects.map((project) => (
-                  <Link key={project.id} to={`/portfolio/${project.id}`}>
-                    <Card className="group overflow-hidden hover-lift bg-card/50 border-border cursor-pointer transition-all hover:border-primary/50">
-                      <div className="relative aspect-[4/3] overflow-hidden">
-                        <img
-                          src={project.image_url}
-                          alt={project.title}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        {project.tags && project.tags[0] && (
-                          <Badge className="absolute top-4 right-4 bg-primary/90">
-                            {project.tags[0]}
-                          </Badge>
-                        )}
-                      </div>
-                      <CardContent className="pt-6">
-                        <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
-                          {project.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground mb-4">{project.location}</p>
-                        <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-3">
-                          {project.description}
-                        </p>
-                        {project.tags && project.tags.length > 0 && (
-                          <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag: string, tagIdx: number) => (
-                              <Badge key={tagIdx} variant="outline" className="text-xs">
-                                {tag}
-                              </Badge>
-                            ))}
-                          </div>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </Link>
-                ))}
-              </div>
-
-              {/* Pagination */}
-              {totalPages > 1 && (
-                <div className="flex items-center justify-center gap-4 mt-12">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    onClick={handlePrevPage}
-                    disabled={currentPage === 0}
-                  >
-                    <ChevronLeft className="mr-2 h-5 w-5" />
-                    Previous
-                  </Button>
-                  <div className="text-sm text-muted-foreground">
-                    Page {currentPage + 1} of {totalPages}
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {currentProjects.map((project) => (
+              <Link key={project.id} to={`/portfolio/${project.id}`}>
+                <Card className="group overflow-hidden hover-lift bg-card/50 border-border cursor-pointer transition-all hover:border-primary/50">
+                  <div className="relative aspect-[4/3] overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <Badge className="absolute top-4 right-4 bg-primary/90">
+                      {project.category}
+                    </Badge>
                   </div>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    onClick={handleNextPage}
-                    disabled={currentPage === totalPages - 1}
-                  >
-                    Next
-                    <ChevronRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-              )}
-            </>
+                  <CardContent className="pt-6">
+                    <h3 className="text-2xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-4">{project.location}</p>
+                    <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-3">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag, tagIdx) => (
+                        <Badge key={tagIdx} variant="outline" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex items-center justify-center gap-4 mt-12">
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={handlePrevPage}
+                disabled={currentPage === 0}
+              >
+                <ChevronLeft className="mr-2 h-5 w-5" />
+                Previous
+              </Button>
+              <div className="text-sm text-muted-foreground">
+                Page {currentPage + 1} of {totalPages}
+              </div>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={handleNextPage}
+                disabled={currentPage === totalPages - 1}
+              >
+                Next
+                <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
           )}
         </div>
       </section>
