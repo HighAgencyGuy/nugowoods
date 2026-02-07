@@ -13,6 +13,7 @@ import Index from "./pages/Home";
 import Showroom from "./pages/Showroom";
 import CustomProjects from "./pages/CustomProjects";
 import Portfolio from "./pages/Portfolio";
+import PortfolioDetail from "./pages/PortfolioDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Process from "./pages/Process";
@@ -44,6 +45,7 @@ const App = () => {
                 <Route path="/showroom" element={<Showroom />} />
                 <Route path="/custom" element={<CustomProjects />} />
                 <Route path="/portfolio" element={<Portfolio />} />
+                <Route path="/portfolio/:id" element={<PortfolioDetail />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/process" element={<Process />} />
