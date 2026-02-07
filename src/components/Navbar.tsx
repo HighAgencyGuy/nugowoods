@@ -40,7 +40,7 @@ export function Navbar() {
     <>
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground py-2 px-4 text-sm text-center">
-        <p>Shop A1, Kugbo Furniture Market, Abuja • Made-to-order & in-stock • Call/WhatsApp: +234 814 404 1524</p>
+        <p>Abuja's Premier Furniture Maker • Made-to-order & in-stock • Call/WhatsApp: +234 814 404 1524</p>
       </div>
 
       {/* Main Navbar */}
@@ -54,7 +54,7 @@ export function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex items-center space-x-2">
               <div className="h-16 w-16 rounded-full bg-white flex items-center justify-center p-1.5">
-                <img src={logo} alt="MienWorks" className="h-full w-full object-contain" />
+                <img src={logo} alt="Sancraft Furniture" className="h-full w-full object-contain" />
               </div>
             </Link>
 

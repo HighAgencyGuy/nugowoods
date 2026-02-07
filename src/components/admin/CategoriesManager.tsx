@@ -56,7 +56,7 @@ export default function CategoriesManager() {
           <p>Loading categories...</p>
         ) : categories.length === 0 ? (
           <p className="text-center py-8 text-muted-foreground">
-            No categories yet. Add categories like Woodwork, Metalwork, Hybrid Works, and Interior Design.
+            No categories yet. Add categories like Living Room, Dining Room, Bedroom, and Office.
           </p>
         ) : (
           <div className="overflow-x-auto">

@@ -40,9 +40,9 @@ export default function About() {
         </div>
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-center">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">About MienWorks</h1>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">About Sancraft Furniture</h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Master craftsmen specializing in woodwork, metalwork, and interior design. We create stunning hybrid pieces combining wood and metal, bringing your vision to life with exceptional craftsmanship. Based in Abuja, we transform spaces with quality that lasts.
+              Master craftsmen specializing in bespoke furniture. We create stunning pieces that bring your vision to life with exceptional craftsmanship. Based in Abuja, we transform spaces with quality that lasts.
             </p>
           </div>
         </div>
@@ -55,10 +55,10 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                At MienWorks, we blend the warmth of wood with the strength of metal to create extraordinary pieces. Our mission is to deliver exceptional woodwork, metalwork, and interior design solutions that transform spaces. We specialize in custom hybrid works that showcase the beauty of both materials.
+                At Sancraft Furniture, we craft exceptional furniture pieces that transform spaces. Our mission is to deliver beautifully designed, expertly crafted furniture solutions that stand the test of time. Every piece is made with care, precision, and a passion for quality.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                From elegant wooden furniture to industrial metal fixtures, and stunning wood-metal combinations, every project reflects our dedication to craftsmanship, innovation, and timeless design. We also offer complete interior decorating services to bring your vision to life.
+                From elegant living room sets to functional office furniture, every project reflects our dedication to craftsmanship, innovation, and timeless design. We work closely with you to bring your vision to life.
               </p>
             </div>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
@@ -154,7 +154,7 @@ export default function About() {
                 careful planning and repurposing of offcuts.
               </p>
               <p>
-                When you choose MienWorks, you're choosing craftsmanship that's kind to both your space
+                When you choose Sancraft Furniture, you're choosing craftsmanship that's kind to both your space
                 and the environment.
               </p>
             </div>
